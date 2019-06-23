@@ -48,7 +48,7 @@ steps:
 
 - script: |
     pushd '$(projectRoot)'
-    python manage.py test --testrunner xmlrunner.extra.djangotestrunner.XMLTestRunner --no-input minin/tests/
+    python manage.py test --testrunner xmlrunner.extra.djangotestrunner.XMLTestRunner --no-input minim/tests/
   displayName: 'Run tests'
 
 - task: PublishTestResults@2
