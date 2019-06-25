@@ -53,12 +53,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'palindrome.wsgi.application'
 
+
+def environ_default(key, default=None):
+    if key in os.environ:
+        return os.environ
+    else:
+        return default
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': os.environ['POSTGRES_PASSWORD'],
+        'PASSWORD': environ_default('POSTGRES_PASSWORD'),
         'HOST': 'db',
         'PORT': 5432,
     }
