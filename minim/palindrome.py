@@ -1,5 +1,4 @@
 def _relax(message: str) -> str:
-    '''Relaxes a message. A relaxed message only contains lowercase letters and digits.'''
     return ''.join(
         filter(
             lambda c: c.isalpha() or c.isdigit(),
