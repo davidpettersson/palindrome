@@ -1,4 +1,6 @@
+psycopg2>=2.8
 Django>=2.2
 djangorestframework>=3.9
+
 Sphinx>=2.1
 sphinx-rtd-theme>=0.4
