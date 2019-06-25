@@ -7,7 +7,6 @@ services:
       POSTGRES_PASSWORD: lOsED7WAYBDBG5GP31ju
   web:
     image: palindrome
-    build: .
     environment:
       POSTGRES_PASSWORD: lOsED7WAYBDBG5GP31ju
       PYTHONUNBUFFERED: 1
