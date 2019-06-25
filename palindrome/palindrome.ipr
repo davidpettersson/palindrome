@@ -11,7 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/palindrome.iml" filepath="$PROJECT_DIR$/palindrome.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.7 (venv)" project-jdk-type="Python SDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_12" default="false" project-jdk-name="Python 3.7 (palindrome)" project-jdk-type="Python SDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="VcsDirectoryMappings">
