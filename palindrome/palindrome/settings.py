@@ -56,7 +56,7 @@ WSGI_APPLICATION = 'palindrome.wsgi.application'
 
 def environ_default(key, default=None):
     if key in os.environ:
-        return os.environ
+        return os.environ[key]
     else:
         return default
 
