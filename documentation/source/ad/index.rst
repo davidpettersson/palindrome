@@ -12,6 +12,7 @@ This is a very abbreviated architecture description. Scenarios (describing inter
 between different components) and information analysis (describing how different entities are transformed, mean
 and should be interpreted) have been omitted due to the application size.
 
+
 Views
 =====
 
@@ -35,13 +36,13 @@ Client
     client of for the message API.
 
 Palindrome
-    Palindrome is the application itself. It consists of a Django project and is responsible for setting the context
-    for the actual web service application. It uses Django's session management for clients, API routing and database
-    connection management.
+    Palindrome is the name of the solution itself. It consists of a Django project and is responsible for setting the
+    context for the actual web service application. It uses Django's session management for clients, API routing and
+    database connection management. It holds the application Minim.
 
 Minim
     Minim is the actual application. It is a typical Django application, and it consists of a number of interaction
-    points with the framework, as well as the actual logic for palindrome management. The data model is represented in
+    points with the framework, as well as the actual logic for palindrome checks. The data model is represented in
     ``models.py``, the palindrome checking functionality is in ``palindrome.py``, the view interactions are in
     ``views.py`` and so on.
 
@@ -54,7 +55,8 @@ Django
     to web requests. In this project, is is responsible for
 
 PostgreSQL
-    PostgreSQL is the backing store for Django. It is a relational database engine which is common on the market.
+    PostgreSQL is used as the backing store for Django. It is a relational database engine which is common on the market.
+
 
 Design Considerations
 ^^^^^^^^^^^^^^^^^^^^^
@@ -78,11 +80,41 @@ Django vs Flask
     of the development skills, more of integration. Unfortunately, the usage of Django does not provide vast amounts
     of code.
 
-PostgreSQL vs other databases
+PostgreSQL vs other database engines
     PostgreSQL is a rather heavy database. It was selected for portability reasons and (fairly) consistent behaviour
     across platforms. A more efficient and fit-for-purpose database would be a NoSQL document database such as MongoDB.
     However, Django does not support MongoDB out of the box, and more libraries would have needed to be integrated to
     support the usage of this (or other) databases.
+
+
+Development View
+----------------
+
+Overview
+^^^^^^^^
+
+Development of the application is done on local development machines. The main requirement is that the development
+machine support running Python 3.7 and Docker, as they are two key components. This should allow for most major
+operating systems.
+
+Development Tools
+^^^^^^^^^^^^^^^^^
+
+Developer's may use any editor they wish. The implementation will come with IntelliJ project files that should be
+reusable for most developers. Python is indentation sensitive, so the recommendation is that the editor have
+
+Coding Standards
+^^^^^^^^^^^^^^^^
+
+For code formatting, the application must align with PEP 8 (Style Guide for Python Code). No other code formatting
+requirements exist beyond what is syntactically necessary.
+
+Testing
+^^^^^^^
+
+Unit testing is mandatory for custom logic. Unit tests should align with the Django framework for testing. Unit
+testing is not required for configuration and wiring code. This should be tested using system/acceptance tests.
+
 
 Deployment View
 ---------------

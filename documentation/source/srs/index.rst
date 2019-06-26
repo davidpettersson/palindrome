@@ -2,11 +2,16 @@
 System Requirement Specification
 ================================
 
+
 Introduction
 ============
 
 The purpose of this document is to provide a set of requirements for the Palindrome application. The intended
 audience are business users, developers and testers that have an interest in what the application can and can not do.
+
+Note that this document does not describe *how* the functionality is implemented. Please see the architecture
+description and the source code for details.
+
 
 Features
 ========
@@ -37,6 +42,7 @@ PAL-001 The system must support checking if a string is a strict palindrome
 PAL-002 The system must support checking if a string is a relaxed palindrome.
     A relaxed palindrome is a string in which alphanumeric characters are the same, disregarding spaces, special
     characters and so on. This is typically what people consider a palindrome.
+
 
 Data Requirements
 =================
