@@ -23,7 +23,7 @@ In Django terms, the entire project is called Palindrome, and the application ha
 
 The Django REST framework library is used to manage tie together the web frontend with the storage backend, while providing a user-friendly interface. Most of this setup is in the `views.py` and `serializer.py` files. 
 
-The palindrome functionality has been implemented through two main functions: `is_strict_palindrome` and `is_relaxed_palindrome` in the `palindrome.py` file.
+The palindrome functionality has been implemented through two main functions: `is_strict_palindrome` and `is_relaxed_palindrome` in the `palindrome.py` file. It is calculated whenever the model is saved, and is read-only.
 
 More details in the architecture description.
 
@@ -112,3 +112,28 @@ python manage.py test minin\tests
 Results should look something like this:
 
 ![functional view](documentation/source/images/run-tests.gif)
+
+Message API
+-----------
+
+The API is centered around the message resource. The entrypoint of the API is the base URL at `/api`, or `http://localhost:8000/api/` when running locally or in a container.
+
+As the Django REST framework is being used, it responds to different Accept content-types. Using a browser will have the framework respect the presented Accept header and give the user a browsable UI suitable for simpler testing.
+
+The following operations and resource combinations are supported:
+
+* **GET /api** will provide a link to the messages resource.
+
+* **GET /api/messages** will list all message currently held in the database.
+
+* **POST /api/message** with a JSON body with a dictionary containing message will create a new message. Whether the message is a palindrome or not will be assess upon creation. Users cannot set this value themselves.
+
+* **GET /api/messages/:id** will get message with the given id.
+
+* **PUT /api/messages/:id** will update a message with the given id. Palindrome checks will be performed here, as with creation.
+
+* **DELETE /api/messages/:id** will delete a message with the given id.
+
+The Django REST framework also provides support for OPTIONS, HEAD and other methods, but these have not been modified or configured in any way.
+
+No other operations or resources are supported.
