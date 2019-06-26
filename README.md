@@ -122,11 +122,11 @@ As the Django REST framework is being used, it responds to different Accept cont
 
 The following operations and resource combinations are supported:
 
-* **GET /api** will provide a link to the messages resource.
+* **GET /api/** will provide a link to the messages resource.
 
-* **GET /api/messages** will list all message currently held in the database.
+* **GET /api/messages/** will list all message currently held in the database.
 
-* **POST /api/message** with a JSON body with a dictionary containing message will create a new message. Whether the message is a palindrome or not will be assess upon creation. Users cannot set this value themselves.
+* **POST /api/messages/** with a JSON body with a dictionary containing message will create a new message. Whether the message is a palindrome or not will be assess upon creation. Users cannot set this value themselves.
 
 * **GET /api/messages/:id** will get message with the given id.
 
